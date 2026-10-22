@@ -1,0 +1,5 @@
+# The image only needs requirements.txt (the project itself is bind-mounted
+# at runtime). Ignoring everything else keeps builds fast and keeps data and
+# the warehouse file out of the image.
+*
+!requirements.txt

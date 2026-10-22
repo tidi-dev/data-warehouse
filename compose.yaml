@@ -1,0 +1,19 @@
+# One service = one development container with all the tools.
+# There is deliberately NO database service: DuckDB is a library that runs
+# inside our Python/dbt processes and stores everything in one file,
+# warehouse/warehouse.duckdb, on YOUR computer (via the bind mount below).
+services:
+  dev:
+    build: .
+    image: data-warehouse-dev
+    working_dir: /workspace
+    volumes:
+      # Bind mount: the project folder on the host IS /workspace in the
+      # container. Files written to /workspace/warehouse/ or /workspace/data/
+      # land on your disk and survive `docker compose down`.
+      - .:/workspace
+    # Run as your own user so files created in the container belong to you
+    # (matters on Linux hosts; harmless on macOS). The Makefile sets these.
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    environment:
+      HOME: /tmp  # a writable home directory for an arbitrary user id

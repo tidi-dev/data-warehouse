@@ -1,0 +1,7 @@
+# Everything the dev container needs. Pinned so every build is identical.
+# (Versions checked against PyPI on 2026-10-05.)
+
+duckdb==1.5.6        # the analytical database (embedded, no server)
+dbt-core==1.12.5     # transformation framework (used from Phase 4 on)
+dbt-duckdb==1.11.0   # lets dbt talk to DuckDB
+pytest==9.1.1        # Python tests

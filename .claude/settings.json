@@ -1,0 +1,19 @@
+{
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  },
+  "permissions": {
+    "deny": [
+      "Skill(superpowers:subagent-driven-development)",
+      "Skill(superpowers:dispatching-parallel-agents)",
+      "Skill(superpowers:using-git-worktrees)",
+      "Skill(superpowers:finishing-a-development-branch)",
+      "Skill(superpowers:receiving-code-review)",
+      "Skill(superpowers:writing-skills)",
+      "Skill(superpowers:diagnosing-superpowers)"
+    ]
+  },
+  "env": {
+    "SUPERPOWERS_DISABLE_TELEMETRY": "1"
+  }
+}

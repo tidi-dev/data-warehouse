@@ -1,0 +1,7 @@
+# Tool configuration only. Dependencies live in requirements.txt, which is
+# what the Dockerfile installs.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]          # lets tests `import scripts.generate_data`
+addopts = "-p no:cacheprovider"  # don't write .pytest_cache into the project
